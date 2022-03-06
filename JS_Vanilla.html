@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <script type="text/javascript">
+        function demoInternalAlert()
+        {
+            alert("Internal Alert");
+        }
+        function demoInternalConfirm()
+        {
+            if(confirm("are you sure...??"))
+            {
+            alert("Confirm Internal");
+            }
+            else
+            {
+                alert("No");
+            }
+        }
+        function demoInternalPrompt()
+        {
+            var fName=prompt("Entern first name");
+            var lName=prompt("Enter last name");
+            alert(fName+" "+lName);
+        }
+
+        function bodyBGYellow()
+        {
+            document.body.style.backgroundColor="Yellow";
+        }
+        function divBGGray()
+        {
+            document.getElementById("D1").style.backgroundColor="Gray";
+        }
+        function divBGDynamic()
+        {
+            document.getElementById("D1").style.backgroundColor=prompt("Enter Color name here:");
+        }
+        function bodyBGDynamic()
+        {
+            document.body.style.backgroundColor=prompt("Enter Color here:");
+        }
+        function bodyBGCP1()
+        {
+            document.body.style.backgroundColor=document.getElementById("CP1").value;
+        }
+        function bodyBGCP2()
+        {
+            document.getElementById("D1").style.backgroundColor=document.getElementById("CP2").value;
+        }
+    </script>
+    <script src="Script/External-Javascript demo.js" type="text/javascript"></script>
+
+    <style type="text/css">
+        body
+        {
+            background-color: blue;
+        }
+        div
+        {
+            background-color: brown;
+            height: 250px;
+            width: 250px;
+        }
+    </style>
+
+</head>
+<body>
+    <div id="D1">
+        Hello Everyone
+    </div>
+    <hr/>
+    <input type="button" value="Alert Online" onclick="alert('Hello')"/>&nbsp;
+    <input type="button" value="Confirm Online" onclick="alert('Hello')"/>&nbsp;
+    <input type="button" value="Prompt online" onclick="alert('Hello')">&nbsp;
+    <hr/>
+    
+    <input type="button" value="Alert Internal" onclick="demoInternalAlert()"/>&nbsp;
+    <input type="button" value="Confirm Internal" onclick="demoInternalConfirm('Hello')"/>&nbsp;
+    <input type="button" value="Prompt Internal" onclick="demoInternalPrompt('Hello')">&nbsp;
+    <hr/>
+
+    
+    <input type="button" value="Alert External" onclick="demoExternalAlert('Hello')"/>&nbsp;
+    <input type="button" value="Confirm External" onclick="demoExternalConfirm('Hello')"/>&nbsp;
+    <input type="button" value="Prompt External" onclick="demoExternalPrompt('Hello')">&nbsp;
+    <hr/>
+    <input type="button" value="Body Bg yellow" onclick="bodyBGYellow('Hello')"/>&nbsp;
+    <input type="button" value="div Bg Gray" onclick="divBGGray('Hello')">&nbsp;
+    <hr/>
+    <input type="button" value="Body Bg Prompt" onclick="bodyBGDynamic('Hello')"/>&nbsp;
+    <input type="button" value="div Bg Prompt" onclick="divBGDynamic('Hello')">&nbsp;
+    <hr/>
+
+    <input type="color" id="CP1" onchange="bodyBGCP1('Hello')"/>&nbsp;
+    <input type="color" id="CP2" onchange="bodyBGCP2('Hello')">&nbsp;
+    <hr/>
+</body>
+</html>
